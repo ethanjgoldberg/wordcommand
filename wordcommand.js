@@ -10,11 +10,7 @@ var scrabbleLetters = "NNNNNNRRRRRRTTTTTTLLLLSSSSDDDDGGGBBCCMMPPFFHHVVWWYYKJXQZ"
 
 function randLetter () {
 	var c = choice(scrabbleLetters);
-	if (c != 'Q') {
-		return {l: c, i: Math.random()};
-	} else {
-		return {l: 'Qu', i: Math.random()};
-	}
+	return {l: c, i: Math.random()};
 	//return choice(choice(words)).toUpperCase();
 }
 
@@ -169,7 +165,6 @@ function Ctrl ($scope) {
 		if (k >= 97 && k <= 122) k -= 32;
 		if (k >= 65 && k <= 90) {
 			var c = String.fromCharCode(k);
-			if (c == 'Q') c = 'Qu';
 			if ($scope.vowel(c)) {
 				$scope.played.push(c);
 				return;
