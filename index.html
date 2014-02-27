@@ -1,0 +1,59 @@
+<html ng-app=app>
+<!--
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+-->
+<script src=angular.js></script>
+<script src=jquery.min.js></script>
+<script src=../bogocrush/enable1.js></script>
+<script src=wordcommand.js></script>
+<link rel=stylesheet href=style.css />
+<body ng-controller=Ctrl ng-keydown=key($event)>
+<div ng-hide=screen>
+	<div id=instructions>
+		<p>Letters fall from the top of the screen.</p>
+		<p>Type a word from the letters, and press space to clear those letters.</p>
+		<p>Prevent letters from reaching the bottom of the screen.</p>
+		<p>Some letters are special, use them in a word to unleash the power!</p>
+	</div>
+	<br>
+	<br>
+	<a href='' ng-click=start()>start</a>
+</div>
+<div ng-show=screen>
+	<div id=field style="width:{{W}};height:{{H}};">
+		<div class="letter-out" style="top:{{letter.y}};left:{{letter.x}}"
+			ng-repeat="letter in letters track by letter.i">
+			<div class="letter-in v-{{vowel(letter.l)}} s-{{letter.selected}}">
+				{{letter.l}}
+			</div>
+		</div>
+	</div>
+	<div id=stats style="top: {{H + 12}}">
+		<div id=points>
+			{{points}}
+			<div id=res></div>
+		</div>
+		{{played.join('')}}
+		<div id=counter>
+			{{hp}}
+			<div id=res></div>
+		</div>
+	</div>
+	<br>
+	<div class=reset ng-hide='resetable > 1'>
+		<div><input type=button ng-click=screen=false value=next></div>
+	</div>
+	<div class=dictionary ng-hide="resetable > 1">
+		<table>
+			<tr><th>Word</th><th>Pts</th></tr>
+			<tr class=d ng-repeat="word in wordsPlayed">
+				<td class=w>{{word.word}}</td>
+				<td class=p>{{word.points}}</td>
+			</tr>
+			<tr><th>Total</th><th>{{points}}</th></tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>

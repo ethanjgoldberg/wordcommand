@@ -1,0 +1,152 @@
+#high {
+	font-weight: 24pt;
+}
+
+#instructions {
+	margin-top: 24px;
+	font-size: 16pt;
+	line-height: 75%;
+	font-family: Georgia;
+}
+
+.b-true {
+	font-weight: bold;
+}
+
+/*
+.anim.ng-enter, 
+.anim.ng-move {
+	-webkit-transition: 0.1s linear all;
+	-moz-transition: 0.1s linear all;
+	-ms-transition: 0.1s linear all;
+	-o-transition: 0.1s linear all;
+	transition: 0.1s linear all;
+	position:relative;
+}
+
+.anim.ng-enter {
+	opacity:0;
+}
+.anim.ng-enter.ng-enter-active {
+	opacity:1;
+}
+*/
+
+body {
+	text-align: center;
+}
+
+#field {
+	border: 3px solid #ddd;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+.letter-out {
+	margin: 4px;
+	display: inline-block;
+	position: absolute;
+}
+
+.letter-in {
+	box-shadow: 1px 1px 2px black;
+	background: #fefefe;
+	border: 2px black solid;
+	width: 48px;
+	height: 48px;
+	font-size: 24pt;
+	text-align: center;
+	cursor: pointer;
+	display: table-cell;
+	border-radius: 14px;
+	vertical-align: middle;
+	opacity: .5;
+}
+.v-true {
+	border-color: blue;
+	box-shadow: 1px 1px 2px blue;
+	opacity: .33;
+	color #004;
+	background: #aaf;
+}
+.s-true {
+	border: 2px red solid;
+	box-shadow: 1px 1px 2px red;
+	color: #400;
+	background: #faa;
+}
+#played {
+	padding: 2px;
+	height: 48px;
+}
+#hand {
+	padding: 2px;
+	height: 50px;
+}
+
+#stats {
+	position: relative;
+	width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 24pt;
+}
+
+.spacer {
+	height: 20px;
+}
+#points {
+	display: inline-block;
+	float: left;
+	width: 40px;
+}
+#counter {
+	display: inline-block;
+	float: right;
+}
+.letter-in:hover {
+	background: #ddd;
+}
+
+#res {
+	height: 24px;
+	position: relative;
+}
+.result {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	font-size: 12pt;
+}
+
+.reset {
+	height: 30px;
+}
+
+.dictionary {
+	margin-right: auto;
+	margin-left: auto;
+	width: 10%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	table-layout: fixed;
+}
+td.w {
+	width: 80%;
+}
+td.p {
+	width: 20%;
+	text-align: center;
+}
+tr.d:nth-child(even) {
+	background: #ddd;
+}
+tr.d:hover {
+	background: #ffd;
+}
