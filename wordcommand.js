@@ -20,7 +20,7 @@ function randLetter () {
 
 function Ctrl ($scope) {
 	$scope.vowel = function (c) {
-		return ("AEIOU".indexOf(c) >= 0);
+		return ("AEIOU".indexOf(c.toUpperCase()) >= 0);
 	}
 	$scope.screen = false;
 	$scope.highScore = window.localStorage['highScore'] || 0;
@@ -202,8 +202,14 @@ function Ctrl ($scope) {
 			$scope.letters[i].selected = false;
 		}
 	}
-	$scope.scoreLength = function (l) {
-		var p = Math.pow(2, l-2);
+	$scope.scoreLength = function (word) {
+		var l = 0;
+		for (var i = 0; i < word.length; i++) {
+			if (!$scope.vowel(word[i])) l++;
+		}
+		console.log(word, l);
+
+		var p = Math.pow(2, l-1);
 		$scope.points += p;
 		$scope.setResult('points', 'green', '+ ' + p);
 		return p;
@@ -237,7 +243,7 @@ function Ctrl ($scope) {
 				$scope.letters.splice(i, 1);
 			}
 		}
-		var p = $scope.scoreLength(h.length);
+		var p = $scope.scoreLength(h);
 		$scope.wordsPlayed.push({
 			word: h,
 			points: p
