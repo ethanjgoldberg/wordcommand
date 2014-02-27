@@ -1,5 +1,5 @@
 function dist2(x1, y1, x2, y2) {
-	return (x1 - y1) * (x1 - y1) + (x2 - y2) * (x2 - y2);
+	return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
 }
 function choice(list) {
 	return list[Math.floor(Math.random() * list.length)];
@@ -105,7 +105,7 @@ function Ctrl ($scope) {
 		this.x = x;
 		this.y = y;
 		this.vx = 0;
-		this.vy = .33;
+		this.vy = .5;
 
 		this.tick = function () {
 			this.vx *= 0.99;
