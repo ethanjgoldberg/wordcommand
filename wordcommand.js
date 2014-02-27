@@ -204,7 +204,7 @@ function Ctrl ($scope) {
 		}
 		console.log(word, l);
 
-		var p = Math.pow(2, l-1);
+		var p = Math.pow(3, l-1);
 		$scope.points += p;
 		$scope.setResult('points', 'green', '+ ' + p);
 		return p;
